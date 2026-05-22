@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curriculum Peluca</title>
+        <link rel="stylesheet" href="/CSS/estilos.css">
+        <style>
+            /* estilos del formulario, van acá para no tocar estilos.css */
+
+            .formulario-contacto {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                width: 80%;
+                max-width: 600px;
+                margin: 30px auto 0 auto;
+            }
+
+            .formulario-contacto label {
+                font-family: 'FuenteMaincra';
+                font-size: 20px;
+                color: white;
+                text-shadow: 2px 2px 0px black;
+            }
+
+            .formulario-contacto input,
+            .formulario-contacto textarea {
+                font-family: 'FuenteMaincra';
+                font-size: 16px;
+                background-color: rgb(59, 59, 59);
+                color: white;
+                border: 4px solid black;
+                border-radius: 8px;
+                padding: 10px;
+                width: 100%;
+                box-shadow: 4px 4px 0px black;
+                outline: none;
+            }
+
+            .formulario-contacto input:focus,
+            .formulario-contacto textarea:focus {
+                border-color: red;
+                box-shadow: 4px 4px 0px red;
+            }
+
+            .formulario-contacto textarea {
+                resize: vertical;
+                min-height: 120px;
+            }
+
+            .formulario-contacto button {
+                font-family: 'FuenteMaincra';
+                font-size: 20px;
+                background-color: whitesmoke;
+                color: black;
+                border: 5px solid black;
+                border-radius: 10px;
+                padding: 15px;
+                cursor: pointer;
+                box-shadow: 5px 5px 0px black;
+                transition: 100ms;
+            }
+
+            .formulario-contacto button:hover {
+                background-color: red;
+                color: white;
+                border-color: whitesmoke;
+                box-shadow: 5px 5px 0px black;
+            }
+        </style>
+    </head>
+    <body>
+         <div class="contenedor">
+       <header>
+            <div class="titulos">
+                
+                <h1 class="titulo-curriculum">Navegador</h1>
+            </div>
+            <nav class="navegador">
+                <ul>
+                <li><a href='/index.html'>Inicio</a></li>
+                <li><a href='/Navegacion/datos.html'>Datos personales</a></li>
+                <li><a href='/Navegacion/contacto.html'>Contacto y Redes</a></li>
+                <li><a href='/Navegacion/idioma.html'>Idiomas </a></li>
+                <li><a href='/Navegacion/sobremi.html'>Sobre mi</a></li>
+                <li><a href='/Navegacion/experiencia.html'>Experiencia y Habilidades</a></li>
+                <li><a href='/Navegacion/educacion.html'>Educacion y Cursos</a></li>
+                <li><a href='/Navegacion/portfolio.html'>Mi Portfolio</a></li>
+                </ul>
+            </nav>
+    <hr> 
+        </header>
+    <div class="contenedor-datos">
+    <h2>Mis contactos</h2>
+    <hr>
+    <!-- mailto: y tel: son protocolos que lo que hacen es que le indican a la computadora que abra la aplicacion predeterminada para el mismo. -->
+    <p>Mail:<a href="mailto:marquitosolguin@gmail.com"> marquitosolguin@gmail.com</a></p>
+    <p>Mi Numero:<a href='tel:+543585165290'> +543585165290</a></p>
+    <p>Ubicacion: Cordoba, Rio Cuarto</p>
+
+    <hr>
+
+    <!-- formulario para que me contacten directamente desde la página -->
+    <form class="formulario-contacto" action="mailto:marquitosolguin@gmail.com" method="post" enctype="text/plain">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre...">
+
+        <label for="email">Tu Mail</label>
+        <input type="email" id="email" name="email" placeholder="Para poder responderte...">
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribime lo que necesites..."></textarea>
+
+        <button type="submit">Enviar mensaje</button>
+    </form>
+
+    </div>
+
+
+
+
+</html>

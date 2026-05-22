@@ -1,0 +1,254 @@
+@font-face {
+    font-family: 'FuenteMaincra';
+    src: url(Fuentes/Minecraft.ttf);
+}
+body {
+    position: relative;
+    background-color: rgb(59, 59, 59);
+    font-family: 'FuenteMaincra';
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body::before{
+
+    content:"";
+
+    position: fixed;
+
+
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+/* Que ocupe toda la pantalla */
+
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 2px,
+
+        transparent 2px,
+        transparent 4px
+        /*desde 0 a 2px → línea visible
+          desde 2 a 4px → invisible */
+    );
+
+}
+
+
+hr{
+    
+    border:none;
+
+    height:4px;
+
+    background:red;
+
+    margin:40px 75px;
+
+    box-shadow:
+    0px 3px 0px black;
+}
+
+
+
+p{
+    text-align: center;
+    font-size: 28px;
+}
+ 
+.titulo-curriculum{
+    color: red;
+    font-size: 65px;
+    background-color: black; 
+    margin: 40px 120px 40px 120px;
+    padding: 40px 0 20px 0; 
+    text-align: center; 
+    border-radius: 20px  ;
+    border: 5px solid red;
+ 
+    box-shadow:
+    10px 10px 0px black;
+
+ text-shadow: 4px 4px 3px rgb(143, 2, 2);
+
+
+}
+
+h2{
+    font-family: 'FuenteMaincra';
+    font-size: 45px;
+     text-align: center;
+}
+
+
+
+.navegador ul{
+    font-family: 'FuenteMaincra';
+    font-size: 25px;
+    display: flex;
+    gap: 30px;   /*Es el espacio entre cada elemento de la lista */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    color:solid black;
+}
+.navegador a{
+    text-decoration: none; 
+    display:block;
+    padding: 20px;
+    
+    border: 5px solid black;
+    border-radius: 10px ;
+    background-color: whitesmoke;
+
+    
+}
+.navegador a:hover{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border:5px solid whitesmoke;
+    box-shadow : 5px 5px 0px rgb(0, 0, 0);
+    transition: 100ms;
+    
+}
+.contenedor{
+    position: relative; 
+    overflow:hidden; /* Hace que el overlay no se salga del borde redondeado */
+    border: 3px solid rgb(255, 74, 74);
+    background-color: rgb(168, 167, 167);
+    margin: auto 150px auto 150px;
+    min-height: 100vh; /* "Mide la pantalla del usuario para ocupar el 100% de la altura de la pantalla" */
+    
+    border-radius: 20px;
+
+
+
+    box-shadow:
+    15px 15px 0px black;
+   
+}
+
+.contenedor::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+
+    background-image:
+    radial-gradient(
+        rgba(0,0,0,0.05) 1px,
+        transparent 1px
+    );
+
+
+    background-size:4px 4px;
+
+    pointer-events:none;
+}
+
+
+
+
+
+a:link {
+  color: black;
+}
+
+
+a:visited {
+  color: black;
+}
+.contenedor-datos {
+    /* 1. Mantenemos el relative para otros fines, pero quitamos CUALQUIER absolute de aquí */
+    position: relative; 
+    
+    /* 2. FLEXBOX: Esta es la magia de la adaptación */
+    display: flex;
+    flex-direction: column;    /* Acomoda hijos en columna (Nombre, HR, Tabla/Datos) */
+    align-items: center;       /* Centra todo horizontalmente */
+    justify-content: flex-start; /* Empieza desde arriba y crece hacia abajo */
+    gap: 20px;                 /* Separa los elementos (Nombre, HR, Tabla) automáticamente */
+
+    /* 3. Diseño Visual (lo que ya te gustaba) */
+    width: 80%; 
+    max-width: 800px;         /* Un poco más angosto para que se vea más prolijo */
+    margin: 50px auto;        /* Centra el cuadro en la página */
+    border: 10px solid black;  /* Tu borde estilo retro */
+    border-radius: 5px;
+    padding: 40px;             /* Espacio interno para que nada toque los bordes */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo gris claro */
+    
+    /* 4. ¡LA CLAVE DE LA ADAPTACIÓN! */
+    height: auto;             /* La altura se adapta al contenido */
+    min-height: 400px;        /* Pero nunca será más chico que esto */
+}
+
+
+/* Limpia tu título */
+.contenedor-datos h2 {
+    position: static; /* O simplemente borra el relative/absolute */
+    margin: 0;
+    text-align: center;
+}
+
+/* Limpia tu HR */
+.contenedor-datos hr {
+    position: static; /* Vuelve al flujo normal */
+    width: 100%;       /* O el ancho que te guste */
+    border: none;
+    height: 4px;
+    background: red;
+    box-shadow: 0px 3px 0px black;
+    margin: 10px auto; /* Centrado horizontal automático */
+}
+
+/* Limpia tu Tabla */
+.tabladatos {
+    position: absolute; /* Cambiado de absolute a static para que fluya con la foto */
+    font-family: 'FuenteMaincra';
+    font-size: 35px;
+    top:200px;
+    left:75px;
+}
+
+/* Limpia tu Foto */
+.foto img {
+    position:absolute;
+    width: 200px;
+    border: 5px solid red;
+    border-radius: 5px;
+    box-shadow: 8px 8px 0px black;
+    margin:0;
+    padding:0;
+    top:180px;
+    left:730px;
+}
+.datosgenerales{
+    margin:20px;
+}
+.datos{
+    position: relative;
+    
+    height: 60vh;
+    width: 90%; 
+    max-width: 1000px; /* Para que no se estire infinito en monitores grandes */
+    margin: 50px auto;
+    border: 10px solid black;
+    border-radius: 5px;
+    padding: 20px;
+   
+    }
