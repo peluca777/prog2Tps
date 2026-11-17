@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- Le indico al navegador que es HTML5 y que el idioma es español -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8"> <!-- uso UTF-8 para que no se rompan los caracteres especiales -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- para que se vea bien en celulares -->
+
+
+  <!-- importo Montserrat desde Google Fonts con los pesos que voy a usar -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- conecto mi archivo de estilos -->
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <title>Brand</title>
+</head>
+<body>
+
+  <!-- uso header porque acá va la navegación, semánticamente es lo correcto -->
+  <header>
+    <nav class="navbar">
+
+      <!-- el logo va a la izquierda, justify-content: space-between se encarga del resto -->
+      <div class="brand_image">
+        <img src="img/logo.png" alt="Brand Logo">
+      </div>
+
+      <!-- los links de navegación van en una lista, como corresponde -->
+      <ul class="nav_options">
+        <li><a href="#">Faqs</a></li>
+        <li><a href="#">Producto y descripción</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- todo el contenido central va dentro de main -->
+  <main>
+
+    <!-- sección del título principal de la página -->
+    <section class="main_section">
+      <h1>Este es un producto increible, no se que haces viendo que lo puedes tener</h1>
+    </section>
+
+    <!-- sección con las dos tarjetas de producto, usan box1 y box2 -->
+    <section class="products">
+
+      <!-- primera tarjeta -->
+      <div class="product">
+        <div class="content">
+          <div class="img_content">
+            <img src="img/box1.png" alt="Producto 1">
+          </div>
+          <h2>Producto 1</h2>
+          <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos</p>
+          <button class="main_button">Lo quiero</button>
+        </div>
+      </div>
+
+      <!-- segunda tarjeta, mismo layout que la primera -->
+      <div class="product">
+        <div class="content">
+          <div class="img_content">
+            <img src="img/box2.png" alt="Producto 2">
+          </div>
+          <h2>Producto 1</h2>
+          <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos</p>
+          <button class="main_button">Lo quiero</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- sección de beneficios: ahora usa la grilla container > row > columnas (Mobile-First) -->
+    <section class="benefits">
+      <div class="container">
+        <div class="row">
+
+          <!-- Tarjeta 1 -->
+          <div class="col-12 col-md-4 card">
+            <div class="img_content">
+              <img src="img/ben1.png" alt="Los más suavecitos">
+            </div>
+            <h3>Los más suavecitos</h3>
+            <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos</p>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div class="col-12 col-md-4 card">
+            <div class="img_content">
+              <img src="img/ben2.png" alt="Lo más increible">
+            </div>
+            <h3>Lo más increible</h3>
+            <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos</p>
+          </div>
+
+          <!-- Tarjeta 3 -->
+          <div class="col-12 col-md-4 card">
+            <div class="img_content">
+              <img src="img/ben3.png" alt="Lo más confiable">
+            </div>
+            <h3>Lo más confiable</h3>
+            <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- sección de menciones con foto y texto de cada persona -->
+    <section class="mentions">
+      <h2 class="mentions_title">Menciones</h2>
+
+      <!-- el grid lo armo con flexbox y flex-wrap para que sea responsive -->
+      <div class="mentions_grid">
+
+        <div class="mention_card">
+          <img src="img/p1.png" alt="Mario">
+          <div class="mention_info">
+            <h4>Mariano</h4>
+            <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos</p>
+          </div>
+        </div>
+
+        <div class="mention_card">
+          <img src="img/p2.png" alt="Julia">
+          <div class="mention_info">
+            <h4>Juliana</h4>
+            <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos</p>
+          </div>
+        </div>
+
+        <div class="mention_card">
+          <img src="img/p3.png" alt="Carla">
+          <div class="mention_info">
+            <h4>Carlos</h4>
+            <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos</p>
+          </div>
+        </div>
+
+        <div class="mention_card">
+          <img src="img/p4.png" alt="Sonia">
+          <div class="mention_info">
+            <h4>Sonic</h4>
+            <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer con dos textos, uno a cada lado gracias a space-between -->
+  <footer>
+    <span class="footer_left">Terminos y condiciones</span>
+    <span class="footer_right">contacto@brand.com</span>
+  </footer>
+
+</body>
+</html>

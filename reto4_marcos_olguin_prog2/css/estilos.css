@@ -1,0 +1,324 @@
+/* traigo Montserrat desde Google Fonts, pido los pesos 400 y 700 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* reseteo universal: el padding y el border no suman al ancho, y saco márgenes y paddings por defecto */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* aca guardo todas mis variables globales para no repetir valores en todo el archivo */
+:root {
+  --color-primario: #2d52cc;    /* verde principal del diseño */
+  --color-secundario: #313337;  /* gris oscuro para textos y fondo del footer */
+  --color-fondo: #f5f5f5;       /* fondo general de la página */
+  --color-blanco: #ffffff;      /* blanco para fondos de tarjetas */
+  --color-texto: #555555;       /* gris suave para los párrafos */
+  --color-footer: #313337;      /* mismo que secundario, lo separo por claridad */
+
+  --fuente-principal: 'Montserrat', sans-serif; /* mi fuente importada de Google */
+
+  --font-size-base: 13px;   /* tamaño base para el body */
+  --font-size-titulo: 18px; /* tamaño para h2 y h3 */
+
+  --space-sm: 10px;  /* espaciado chico */
+  --space-md: 20px;  /* espaciado mediano */
+  --space-lg: 40px;  /* espaciado grande */
+
+  --border-radius: 6px;                    /* redondeo de tarjetas */
+  --box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* sombra suave para las cards */
+}
+
+/* saco los márgenes y paddings que el navegador pone por defecto */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: var(--font-size-base);
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-secundario);
+}
+
+/* limpio los estilos por defecto de las listas */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* las imágenes no se salen de su contenedor */
+img {
+  max-width: 100%;
+}
+
+/* el header tiene el fondo verde */
+header {
+  background-color: var(--color-primario);
+}
+
+/* la navbar es un flex con logo a la izq y links a la der */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+}
+
+/* le doy una altura fija al logo para que no quede enorme */
+.brand_image img {
+  height: 30px;
+}
+
+/* los links del nav también los pongo en fila con gap entre ellos */
+.nav_options {
+  display: flex;
+  gap: var(--space-md);
+}
+
+/* estilo base del link: gris oscuro y sin subrayado */
+.nav_options li a {
+  color: var(--color-secundario);
+  text-decoration: none;
+  font-size: var(--font-size-base);
+}
+
+/* al hacer hover el link se pone blanco */
+.nav_options li a:hover {
+  color: var(--color-blanco);
+}
+
+/* la sección hero centra el título con flexbox */
+.main_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-lg) 15%;
+  text-align: center;
+  background-color: var(--color-blanco);
+}
+
+/* limito el ancho del h1 para que no se estire demasiado */
+.main_section h1 {
+  font-size: var(--font-size-titulo);
+  font-weight: 700;
+  color: var(--color-secundario);
+  max-width: 500px;
+}
+
+/* la sección de productos usa curve.png de fondo y acomoda las cards en fila */
+.products {
+  background-image: url("../img/curve.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat; /* no quiero que la imagen se repita */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* si no entran, bajan a la siguiente línea */
+  gap: var(--space-md);
+  padding: var(--space-lg) 15%;
+  padding-top: 80px; /* dejo aire arriba para que se vea la imagen de fondo */
+}
+
+/* cada tarjeta de producto crece pero tiene un máximo de ancho */
+.product {
+  flex: 1 1 220px;
+  max-width: 300px;
+}
+
+/* el contenido de la tarjeta apila sus hijos en columna */
+.product .content {
+  background-color: var(--color-blanco);
+  padding: var(--space-md);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.product .content h2 {
+  font-size: var(--font-size-titulo);
+  font-weight: 700;
+  margin: 0;
+}
+
+.product .content p {
+  color: var(--color-texto);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* centro las imágenes dentro de su contenedor */
+.img_content {
+  text-align: center;
+}
+
+.img_content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* el botón ocupa todo el ancho de la tarjeta y usa el color primario */
+.main_button {
+  background-color: var(--color-primario);
+  width: 100%;
+  padding: var(--space-sm);
+  font-size: var(--font-size-base);
+  font-family: var(--fuente-principal);
+  color: var(--color-blanco);
+  border: 0;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  /* la transición se declara en el estado base (sin usar all) */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* al hacer hover cambia el color suavemente y se hunde levemente */
+.main_button:hover {
+  background-color: #229e9e;
+  transform: translateY(1px);
+}
+
+/* la sección de beneficios mantiene el fondo blanco a todo el ancho */
+.benefits {
+  padding: var(--space-lg) 0;
+  background-color: var(--color-blanco);
+}
+
+/* sistema de grillas: contenedor centrado con ancho máximo */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* la fila activa flexbox en horizontal y deja bajar las columnas */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* separación limpia entre tarjetas */
+}
+
+/* vista base: celulares (ocupan todo el ancho) */
+.col-12 {
+  width: 100%;
+}
+
+/* vista desktop: pantallas grandes (3 columnas) */
+@media (min-width: 768px) {
+  .col-md-4 {
+    width: calc(33.333% - 14px); /* resto el espacio proporcional del gap */
+  }
+}
+
+/* tarjeta de beneficio: mantiene el contenido centrado en columna */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  /* la transición se declara en el estado base */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* al pasar el mouse se eleva 5px y la sombra se hace más profunda */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+/* le doy un tamaño fijo al ícono de cada beneficio */
+.card .img_content img {
+  width: 80px;
+  height: auto;
+}
+
+.card h3 {
+  font-size: var(--font-size-titulo);
+  font-weight: 700;
+  margin: 0;
+}
+
+.card p {
+  color: var(--color-texto);
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* la sección menciones tiene fondo gris para diferenciarse */
+.mentions {
+  padding: var(--space-lg) 5%;
+  background-color: var(--color-fondo);
+}
+
+/* el título "Menciones" va centrado */
+.mentions_title {
+  text-align: center;
+  font-size: var(--font-size-titulo);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+/* el grid de menciones también usa flex-wrap para ser responsive */
+.mentions_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+/* cada tarjeta de mención tiene overflow hidden para que la foto no se salga del borde redondeado */
+.mention_card {
+  flex: 1 1 180px;
+  max-width: 220px;
+  background-color: var(--color-blanco);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+/* la foto ocupa todo el ancho y tiene altura fija, object-fit la recorta bien */
+.mention_card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block; /* evito el espacio extra que deja inline */
+}
+
+.mention_info {
+  padding: var(--space-sm);
+}
+
+.mention_info h4 {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.mention_info p {
+  font-size: 11px;
+  color: var(--color-texto);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* el footer usa space-between para poner un texto a cada lado */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-footer);
+  color: var(--color-blanco);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 11px;
+}
